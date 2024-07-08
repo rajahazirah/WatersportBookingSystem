@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/webapp-runner.jar ${WEBAPP_RUNNER_OPTS} --port $PORT target/WatersportBookingSystemRedoLatest.war
+web: java -war target/WatersportBookingSystemRedoLatest.war
