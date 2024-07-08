@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register Customer</title>
+<!-- css -->
+<link rel="stylesheet" href="style.css">
+<!-- Box Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body class="global-styles">
+	<!-- Header -->
+	<header>
+		<a href="#" class="logo"><img src="image/logo.png" alt=""></a>
+		
+		<div class="bx bx-menu" id="menu-icon"></div>
+		
+		<ul class="navbar">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="activities.html">Activities</a></li>
+
+		</ul>
+		<div class="icon-color">
+			<a href="#" style="font-size: 2em"><i class='bx bx-user-circle' ></i></a>
+
+		</div>
+	</header>
+
+	<section class="register">
+        <form class="register-form" action="CustomerController" method="post">
+		    <h2>Register Customer Account</h2>
+		    <input type="hidden" name="action" value="register">
+		    <input type="text" placeholder="Full Name" name="custname">
+		    <input type="text" placeholder="Username" name="accusername">
+		    <input type="password" placeholder="Password" name="accpassword">
+		    <input type="email" placeholder="Email" name="custemail">
+		    <button class="btn btn-info" type="submit">Register Customer</button>  
+
+</form>
+    </section>
+    <footer class="footer">
+        <div class="row">
+
+        </div>
+    </footer>
+
+</body>
+</html>

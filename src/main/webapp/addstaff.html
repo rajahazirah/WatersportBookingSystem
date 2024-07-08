@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register Staff</title>
+<!-- css -->
+<link rel="stylesheet" href="style.css">
+<!-- Box Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body class="global-styles">
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo"><img src="image/logo.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="indexadmin.html">Home</a></li>
+            <li><a href="activities.html">Activities</a></li>
+        </ul>
+        <div class="icon-color">
+            <a href="#" style="font-size: 2em"><i class='bx bx-user-circle' ></i></a>
+
+        </div>
+    </header>
+
+    <section class="register">
+        <form class="register-form" action="CustomerController" method="post">
+            <h2>Register Staff Account</h2>
+            <input type="hidden" name="action" value="addStaff">
+            <input type="text" placeholder="Full Name" name="accname">
+            <input type="text" placeholder="Username" name="accusername">
+            <input type="password" placeholder="Password" name="accpassword">
+            <input type="email" placeholder="Email" name="accemail">
+            <button class="btn btn-info" type="submit">Register Staff</button>  
+            <button class="btn btn-info" type="button" onclick="location.href='CustomerController?action=listStaff'">Staff List</button><br> 
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="row">
+
+        </div>
+    </footer>
+</body>
+</html>

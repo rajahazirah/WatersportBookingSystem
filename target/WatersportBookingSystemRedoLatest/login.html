@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<!-- css -->
+<link rel="stylesheet" href="style.css">
+<!-- Box Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<script>
+    function toggleLogin(role) {
+        if (role === 'customer') {
+            document.getElementById('customerForm').style.display = 'block';
+            document.getElementById('adminForm').style.display = 'none';
+            document.getElementById('staffForm').style.display = 'none';
+        } else if (role === 'admin') {
+            document.getElementById('customerForm').style.display = 'none';
+            document.getElementById('adminForm').style.display = 'block';
+            document.getElementById('staffForm').style.display = 'none';
+        } else if (role === 'staff') {
+            document.getElementById('customerForm').style.display = 'none';
+            document.getElementById('adminForm').style.display = 'none';
+            document.getElementById('staffForm').style.display = 'block';
+        }
+    }
+</script>
+</head>
+<body class="global-styles">
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo"><img src="image/logo.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="activities.html">Activities</a></li>
+
+        </ul>
+        <div class="icon-color">
+            <a href="#" style="font-size: 2em"><i class='bx bx-user-circle'></i></a>
+
+        </div>
+    </header>
+    <section class="login">
+        <form id="customerForm" class="login-form" action="CustomerController" method="post">
+            <h2>Login to Your Account</h2><br>
+            <div>
+                <input type="radio" name="role" value="customer" id="customer" onclick="toggleLogin('customer')" checked>
+                <label for="customer">Customer</label>
+                <input type="radio" name="role" value="admin" id="admin" onclick="toggleLogin('admin')">
+                <label for="admin">Admin</label>
+                <input type="radio" name="role" value="staff" id="staff" onclick="toggleLogin('staff')">
+                <label for="staff">Staff</label>
+            </div>
+            <input type="hidden" name="action" value="login">
+            <input type="text" placeholder="Username" name="accusername" required>
+            <input type="password" placeholder="Password" name="accpassword" required>
+            <button class="btn btn-info" type="submit">Login as Customer</button>
+        </form>
+
+        <form id="adminForm" class="login-form" action="CustomerController" method="post" style="display: none; margin-top: 20px;">
+            <h2>Admin Login</h2><br>
+            <div>
+                <input type="radio" name="role" value="customer" id="customer" onclick="toggleLogin('customer')">
+                <label for="customer">Customer</label>
+                <input type="radio" name="role" value="admin" id="admin" onclick="toggleLogin('admin')" checked>
+                <label for="admin">Admin</label>
+                <input type="radio" name="role" value="staff" id="staff" onclick="toggleLogin('staff')">
+                <label for="staff">Staff</label>
+            </div>
+            <input type="hidden" name="action" value="loginAdmin">
+            <input type="text" placeholder="Username" name="accusername" required>
+            <input type="password" placeholder="Password" name="accpassword" required>
+            <a class="btn btn-info" href="indexadmin.html">Login as Admin</a>
+
+        </form>
+
+        <form id="staffForm" class="login-form" action="CustomerController" method="post" style="display: none; margin-top: 20px;">
+            <h2>Staff Login</h2><br>
+            <div>
+                <input type="radio" name="role" value="customer" id="customer" onclick="toggleLogin('customer')">
+                <label for="customer">Customer</label>
+                <input type="radio" name="role" value="admin" id="admin" onclick="toggleLogin('admin')">
+                <label for="admin">Admin</label>
+                <input type="radio" name="role" value="staff" id="staff" onclick="toggleLogin('staff')" checked>
+                <label for="staff">Staff</label>
+            </div>
+            <input type="hidden" name="action" value="loginStaff">
+            <input type="text" placeholder="Username" name="accusername" required>
+            <input type="password" placeholder="Password" name="accpassword" required>
+            <button class="btn btn-info" type="submit">Login as Staff</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="row">
+
+        </div>
+    </footer>
+</body>
+</html>
